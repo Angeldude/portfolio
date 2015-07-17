@@ -1,6 +1,6 @@
 img{
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
 }
 
 p{
@@ -9,4 +9,8 @@ p{
 
 a:link {
   text-decoration: none;
+}
+
+#phone {
+  float: right;
 }
