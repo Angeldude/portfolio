@@ -2,8 +2,7 @@
    width: 10em;
    height: 10em;
    border-radius: 10%;
-   margin: 0.3em 32em;
-   border: 0.25em outset #ffb8dc;
+   border: 0.2em outset #ffb8dc;
  }
 
  #phone {
@@ -45,6 +44,7 @@
  }
  p {
    text-align: center;
+   width: 30em;
  }
  em{
    font-weight: bold;
