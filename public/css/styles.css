@@ -3,6 +3,7 @@
    height: 10em;
    border-radius: 10%;
    margin: 0.3em 32em;
+   border: 0.25em outset #ffb8dc;
  }
 
  #phone {
@@ -28,6 +29,11 @@
  a:link {
    text-decoration: none;
  }
+
+ a:hover{
+   text-decoration: underline;
+   color: darkred;
+ }
  a img {
    width: 2em;
    height: 2em;
@@ -39,4 +45,9 @@
  }
  p {
    text-align: center;
+ }
+ em{
+   font-weight: bold;
+   font-style: normal;
+   font-family: arial, sans-serif;
  }
