@@ -1,26 +1,42 @@
-h2{
-  font-family: Arial, sans-serif;
-}
+ #face{
+   width: 10em;
+   height: 10em;
+   border-radius: 10%;
+   margin: 0.3em 32em;
+ }
 
-img{
-  border-radius: 10%;
-  width: 150px;
-  height: 154px;
-}
-
-p{
-  font-family: cursive;
-}
-
-a:link {
-  text-decoration: none;
-}
-
-
-
-#image {
-  border: 0.16em inset blue;
-  width: 9.3em;
-  height: 9.7em;
-  border-radius: 10%;
-}
+ #phone {
+   float: right;
+   color: blue;
+ }
+ li {
+   width: 10em;
+   list-style: none;
+   display: inline-block;
+ }
+ h2 {
+   text-align: center;
+   background-color: #fae4ff;
+   margin: 1em auto;
+   padding: 1em;
+   border-radius: 50%;
+   width: 10em;
+ }
+ body {
+   background-color: #eefdcd;
+ }
+ a:link {
+   text-decoration: none;
+ }
+ a img {
+   width: 2em;
+   height: 2em;
+ }
+ p.content {
+   color: green;
+   font-style: italic;
+   font-family: Vivaldi, cursive;
+ }
+ p {
+   text-align: center;
+ }
