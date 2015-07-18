@@ -3,8 +3,9 @@ h2{
 }
 
 img{
+  border-radius: 10%;
   width: 150px;
-  height: 150px;
+  height: 154px;
 }
 
 p{
@@ -15,6 +16,11 @@ a:link {
   text-decoration: none;
 }
 
-#phone {
-  float: right;
+
+
+#image {
+  border: 0.16em inset blue;
+  width: 9.3em;
+  height: 9.7em;
+  border-radius: 10%;
 }

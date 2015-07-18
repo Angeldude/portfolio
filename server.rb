@@ -1,7 +1,7 @@
 require "sinatra"
 
-set :public_folder, "public/index.html"
-
 get '/' do
+
+  File.read(File.join('public', 'index.html'))
 
 end
