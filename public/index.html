@@ -3,36 +3,128 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
-</head>
+  <title>Angel's Site</title>
+  <link rel="stylesheet" href="css/styles.css" /> </head>
 
 <body>
-  <h2>Angel Vanegas</h2> <a href="mailto:angelman@gmail.com">email</a> <p> Hello all and welcome! I am on my way to becoming a
-    <abbr title="Ruby on Rails">RoR</abbr> developer but don't let that discourage you for I am a man of many talents! With a background in music and esotericism, I inject the power of sound and magic into any code I create! Actually, my specialty is writing code that can either:
-    <ul>
-      <li>create music</li>
-      <li>affect sound</li>
-      <li>analyse sound</li>
-      <li>work on software related to sound or music</li>
-    </ul>
-  </p>
-  <p> Overall, I have a unique perspective on programming and hope to show others that unique perspective!</p>
+  <div class="header">
+    <h1>Angel Vanegas</h1>
+    <img id="profile" src="img/angel.jpg" alt="Angel pic" /> </div>
+  <div>
+    <p> Hello all and welcome! I am on my way to becoming a
+      <abbr title="Ruby on Rails">RoR</abbr> developer with specialized skills in:
+      <ul>
+        <li>creating music</li>
+        <li>affecting sound</li>
+        <li>analysing sound</li>
+        <li>software related to sound or music</li>
+      </ul>
+    </p>
+    <p> Overall, I have a unique perspective on programming and hope to show others that unique perspective!</p>
+    <p>Here is some example code I've written:
+      <code>
+        <div class="code">
+          &nbsp;&nbsp;class&nbsp;Calc
+          <br /> &nbsp;&nbsp;def&nbsp;initialize(amount,&nbsp;tip,&nbsp;people)
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;@amount&nbsp;=&nbsp;amount
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;@tip&nbsp;=&nbsp;tip
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;@people&nbsp;=&nbsp;people
+          <br /> &nbsp;&nbsp;end
+          <br />
+          <br /> &nbsp;&nbsp;def&nbsp;calculate
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;total&nbsp;=&nbsp;@amount&nbsp;+&nbsp;(@amount&nbsp;*&nbsp;@tip)
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;@people&nbsp;&lt;&nbsp;0
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;=&nbsp;0
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;elsif&nbsp;@people&nbsp;&lt;&nbsp;1
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;=&nbsp;total
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;else
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;=&nbsp;total&nbsp;/&nbsp;@people
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;end
+          <br /> &nbsp;&nbsp;end
+          <br /> end
+        </div>
+      </code>
+    </p>
+    <p>That was for a Tip Calculator project. This next one is from a more recent project in which a simple election was simulated:
+      <code>
+        <div class="code">
+          class&nbsp;Campaign
+          <br /> &nbsp;&nbsp;attr_reader&nbsp;:voters,&nbsp;:outcome
+          <br />
+          <br /> &nbsp;&nbsp;def&nbsp;initialize(candidates,&nbsp;voters)
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;@politicians&nbsp;=&nbsp;candidates
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;@notvote&nbsp;=&nbsp;Array.new
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;@voters&nbsp;=&nbsp;voters
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;@outcome&nbsp;=&nbsp;Array.new
+          <br /> &nbsp;&nbsp;end
+          <br />
+          <br /> &nbsp;&nbsp;def&nbsp;not_vote&nbsp;#sends&nbsp;indecisive&nbsp;voters&nbsp;into&nbsp;an&nbsp;array
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;@voters.each&nbsp;do&nbsp;|voter|
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;voter.voted
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@notvote.push(voter)
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;end
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;@notvote
+          <br /> &nbsp;&nbsp;end
+          <br />
+          <br /> &nbsp;&nbsp;#&nbsp;indecisive&nbsp;voters&nbsp;now&nbsp;randomly&nbsp;pick&nbsp;a&nbsp;candidate&nbsp;so&nbsp;everyone&nbsp;votes.
+          <br /> &nbsp;&nbsp;def&nbsp;finish_the_job(voters,&nbsp;candidates)
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;voters.empty?
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;voters.each&nbsp;do&nbsp;|voter|
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;candidates.sample.vote_counter&nbsp;+=&nbsp;1
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;voter.voted&nbsp;=&nbsp;true
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;end
+          <br /> &nbsp;&nbsp;end
+          <br />
+          <br /> &nbsp;&nbsp;#&nbsp;lists&nbsp;the&nbsp;total&nbsp;votes&nbsp;of&nbsp;all&nbsp;candidates
+          <br /> &nbsp;&nbsp;def&nbsp;show_outcome
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;msg&nbsp;=&nbsp;"CALCULATING&nbsp;VOTES..."
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;5.times&nbsp;do
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;"\r#{&nbsp;msg&nbsp;}"
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sleep&nbsp;0.5
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;"\r#{&nbsp;'&nbsp;'&nbsp;*&nbsp;msg.size&nbsp;}"
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sleep&nbsp;0.5
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;end
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;puts&nbsp;"\nThe&nbsp;votes&nbsp;are&nbsp;in!"
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;@outcome.each&nbsp;do&nbsp;|candidate|
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;top_spacer("#{candidate.name}&nbsp;has&nbsp;#{candidate.vote_counter}",&nbsp;1)
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;end
+          <br /> &nbsp;&nbsp;end
+          <br />
+          <br /> &nbsp;&nbsp;def&nbsp;all_stumps
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;checks&nbsp;if&nbsp;list&nbsp;is&nbsp;empty,&nbsp;if&nbsp;not&nbsp;runs&nbsp;the&nbsp;platform&nbsp;method...
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;true
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;@politicians.empty?
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;puts&nbsp;"No&nbsp;more&nbsp;candidates&nbsp;left!"
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;top_spacer("All&nbsp;done!",&nbsp;1)
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stump_platform
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;end
+          <br /> &nbsp;&nbsp;end
+        </div>
+    </p>
+    <p><a href="mailto:angelman@rediffmail.com">Shoot me an email!</a></p>
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="Namlegna">Tweet</a>
+    <script>
+      ! function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+          p = /^http:/.test(d.location) ? 'http' : 'https';
+        if (!d.getElementById(id)) {
+          js = d.createElement(s);
+          js.id = id;
+          js.src = p + '://platform.twitter.com/widgets.js';
+          fjs.parentNode.insertBefore(js, fjs);
+        }
+      }(document, 'script', 'twitter-wjs');
+    </script>
 
-  <a href="https://twitter.com/share" class="twitter-share-button" data-via="Namlegna">Tweet</a>
-  <script>
-    ! function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0],
-        p = /^http:/.test(d.location) ? 'http' : 'https';
-      if (!d.getElementById(id)) {
-        js = d.createElement(s);
-        js.id = id;
-        js.src = p + '://platform.twitter.com/widgets.js';
-        fjs.parentNode.insertBefore(js, fjs);
-      }
-    }(document, 'script', 'twitter-wjs');
-  </script>
-
-  <a href="https://github.com/Angeldude"><img src="img/GitHub-Mark.png"></a>
+    <a href="https://github.com/Angeldude">
+      <img src="img/GitHub-Mark.png" alt="github logo">
+    </a>
+  </div>
 
 </body>
 
