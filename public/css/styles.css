@@ -27,19 +27,60 @@ img {
   height: 3em;
 }
 p {
+  text-align: center;
   padding: 0.2em;
   font-family: Arial, sans-serif;
+  color: #2f6d7a;
 }
-li{
-  list-style:none;
+body {
+  margin-top: 0;
+  background-color: #f3fbfd;
 }
-
-div{
+div {
   background-color: #fbecee;
   border-radius: 1%;
+}
+div.code{
+  position: relative;
+  left: 25em;
 }
 div.header {
   border: 1px solid #b5dde5;
   background-color: #b5dde5;
   border-radius: 1em 1em 1em 0;
+}
+div.circle1 {
+  position: relative;
+  left: 5em;
+  top: 6em;
+  float: right;
+  border-radius: 50%;
+  background-color: #ffa500;
+  width: 4em;
+  height: 4em;
+  border: 0.1em solid #ffa500;
+  opacity: 0.45;
+}
+div.circle2 {
+  position: relative;
+  float: right;
+  left: 10em;
+  top: 11em;
+  border-radius: 50%;
+  background-color: #ffa500;
+  width: 2em;
+  height: 2em;
+  border: 0.1em solid #ffa500;
+  opacity: 0.4;
+}
+#welcome {
+  font-size: 4em;
+  color: #2f6d7a;
+}
+li {
+  color: #2f6d7a;
+  list-style: none;
+  font-size: 2em;
+  font-family: cursive;
+  font-style: italic;
 }
