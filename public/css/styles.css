@@ -27,9 +27,8 @@ img {
   height: 3em;
 }
 p {
-  text-align: center;
-  padding: 0.2em;
-  font-family: Arial, sans-serif;
+  padding: 0.2em 0 0 0.2em;
+  font-family: Times, serif;
   color: #2f6d7a;
 }
 body {
@@ -40,10 +39,7 @@ div {
   background-color: #fbecee;
   border-radius: 1%;
 }
-div.code{
-  position: relative;
-  left: 25em;
-}
+
 div.header {
   border: 1px solid #b5dde5;
   background-color: #b5dde5;
@@ -76,6 +72,10 @@ div.circle2 {
 #welcome {
   font-size: 3em;
   color: #2f6d7a;
+}
+.footer{
+  text-align: center
+
 }
 li {
   color: #2f6d7a;
