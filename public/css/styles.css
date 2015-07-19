@@ -77,10 +77,15 @@ div.circle2 {
   text-align: center
 
 }
+.code{
+  max-width: 20em;
+  min-width: 20em;
+  overflow: scroll;
+}
+
 li {
   color: #2f6d7a;
   list-style: none;
   font-size: 2em;
-  font-family: cursive;
-  font-style: italic;
+  font-family: Vivaldi, cursive;
 }
