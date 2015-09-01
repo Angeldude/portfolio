@@ -26,7 +26,7 @@ img {
   width: 3em;
   height: 3em;
 }
-p {
+p, li {
   padding: 0.2em 0 0 0.2em;
   font-family: Times, serif;
   color: #2f6d7a;
