@@ -1,0 +1,105 @@
+@import 'lib/normalize/normalize';
+@import 'lib/bourbon/bourbon';
+@import 'base/base';
+@import 'lib/neat/neat';
+.headers {
+  background-color: black;
+  text-align: center;
+  .name {
+    color: whitesmoke;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  .flex-container {
+    @include display(flex);
+    @include justify-content(space-between);
+    @include flex-direction(row-reverse);
+    .col {
+
+      // background-color: red;
+      color: white;
+      @include flex(1);
+    }
+  }
+}
+nav {
+  border: 1px dotted blue;
+  background-color: $lavender;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .about {
+    color: whitesmoke;
+  }
+  .project {
+    color: whitesmoke;
+  }
+  .col {
+    flex: 3;
+  }
+  .links {
+    flex: 1;
+  }
+  #github {
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+  #linkedin {
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}
+.social {
+  height: 2.5em;
+  width: 2.5em;
+}
+#angel {
+  flex: 1;
+  border-radius: 5em 2em;
+  height: 20em;
+  width: 20em;
+}
+#content {
+  height: 32em;
+  background-color: $soft;
+  border: 2px solid orange;
+  display: flex;
+  align-items: center;
+  .bio {
+    font-size: 1.3em;
+    flex: 3;
+  }
+}
+.ending {
+  background-color: $lavender;
+  border: 1px dotted blue;
+  #footing {
+    display: flex;
+    justify-content: space-around;
+    color: whitesmoke;
+    #new_color {
+      color: whitesmoke;
+    }
+  }
+}
+#projects {
+  display: flex;
+  background-color: $soft;
+  border: 2px solid orange;
+  justify-content: space-around;
+  flex-direction: column;
+  // align-items: center;
+  .code{
+    flex: 2;
+    p{
+    }
+  }
+  .sites {
+    border-radius: 5em 2em;
+    height: 12rem;
+    width: 12rem;
+  }
+}
