@@ -3,135 +3,107 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Angel's Site</title>
-  <link rel="stylesheet" href="css/styles.css" /> </head>
+  <title>Angel Vanegas</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="js/application.js"></script>
+</head>
 
 <body>
-  <div class="header">
-    <h1>Angel Vanegas</h1>
-    <img id="profile" src="img/angel.jpg" alt="Angel pic" />
-    <p><a href="mailto:angelman@gmail.com">angelman@gmail.com</a></p>
-   </div>
-  <div class="circle1"></div>
-  <div class="circle2"></div>
-  <div>
-    <p id="welcome"> Hello all and welcome! I have just graduated from Wyncode, a 9
-      week bootcamp style course in web development specializing in:
-      <ul>
-        <li>Ruby programming</li>
-        <li>Ruby on Rails framework</li>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>Javascript</li>
-        <li>SQL</li>
-      </ul>
-
-    <p>Here is some example code I've written:
-      <code>
-        <div class="code">
-          &nbsp;&nbsp;class&nbsp;Calc
-          <br /> &nbsp;&nbsp;def&nbsp;initialize(amount,&nbsp;tip,&nbsp;people)
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;@amount&nbsp;=&nbsp;amount
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;@tip&nbsp;=&nbsp;tip
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;@people&nbsp;=&nbsp;people
-          <br /> &nbsp;&nbsp;end
-          <br />
-          <br /> &nbsp;&nbsp;def&nbsp;calculate
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;total&nbsp;=&nbsp;@amount&nbsp;+&nbsp;(@amount&nbsp;*&nbsp;@tip)
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;@people&nbsp;&lt;&nbsp;0
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;=&nbsp;0
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;elsif&nbsp;@people&nbsp;&lt;&nbsp;1
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;=&nbsp;total
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;else
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;=&nbsp;total&nbsp;/&nbsp;@people
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;end
-          <br /> &nbsp;&nbsp;end
-          <br /> end
-        </div>
-      </code>
-    </p>
-    <p>That was for a Tip Calculator project. This next one is from a more recent project in which a simple election was simulated:
-      <code>
-        <div class="code">
-          class&nbsp;Campaign
-          <br /> &nbsp;&nbsp;attr_reader&nbsp;:voters,&nbsp;:outcome
-          <br />
-          <br /> &nbsp;&nbsp;def&nbsp;initialize(candidates,&nbsp;voters)
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;@politicians&nbsp;=&nbsp;candidates
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;@notvote&nbsp;=&nbsp;Array.new
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;@voters&nbsp;=&nbsp;voters
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;@outcome&nbsp;=&nbsp;Array.new
-          <br /> &nbsp;&nbsp;end
-          <br />
-          <br /> &nbsp;&nbsp;def&nbsp;not_vote&nbsp;#sends&nbsp;indecisive&nbsp;voters&nbsp;into&nbsp;an&nbsp;array
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;@voters.each&nbsp;do&nbsp;|voter|
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;voter.voted
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@notvote.push(voter)
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;end
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;@notvote
-          <br /> &nbsp;&nbsp;end
-          <br />
-          <br /> &nbsp;&nbsp;#&nbsp;indecisive&nbsp;voters&nbsp;now&nbsp;randomly&nbsp;pick&nbsp;a&nbsp;candidate&nbsp;so&nbsp;everyone&nbsp;votes.
-          <br /> &nbsp;&nbsp;def&nbsp;finish_the_job(voters,&nbsp;candidates)
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;voters.empty?
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;voters.each&nbsp;do&nbsp;|voter|
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;candidates.sample.vote_counter&nbsp;+=&nbsp;1
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;voter.voted&nbsp;=&nbsp;true
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;end
-          <br /> &nbsp;&nbsp;end
-          <br />
-          <br /> &nbsp;&nbsp;#&nbsp;lists&nbsp;the&nbsp;total&nbsp;votes&nbsp;of&nbsp;all&nbsp;candidates
-          <br /> &nbsp;&nbsp;def&nbsp;show_outcome
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;msg&nbsp;=&nbsp;"CALCULATING&nbsp;VOTES..."
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;5.times&nbsp;do
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;"\r#{&nbsp;msg&nbsp;}"
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sleep&nbsp;0.5
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;"\r#{&nbsp;'&nbsp;'&nbsp;*&nbsp;msg.size&nbsp;}"
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sleep&nbsp;0.5
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;end
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;puts&nbsp;"\nThe&nbsp;votes&nbsp;are&nbsp;in!"
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;@outcome.each&nbsp;do&nbsp;|candidate|
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;top_spacer("#{candidate.name}&nbsp;has&nbsp;#{candidate.vote_counter}",&nbsp;1)
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;end
-          <br /> &nbsp;&nbsp;end
-          <br />
-          <br /> &nbsp;&nbsp;def&nbsp;all_stumps
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;checks&nbsp;if&nbsp;list&nbsp;is&nbsp;empty,&nbsp;if&nbsp;not&nbsp;runs&nbsp;the&nbsp;platform&nbsp;method...
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;true
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;@politicians.empty?
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;puts&nbsp;"No&nbsp;more&nbsp;candidates&nbsp;left!"
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;top_spacer("All&nbsp;done!",&nbsp;1)
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stump_platform
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;end
-          <br /> &nbsp;&nbsp;end
-        </div>
-    </p>
-    <div class="footer">
-      <a href="https://twitter.com/Namlegna" class="twitter-follow-button" data-show-count="false">Follow @Namlegna</a>
-      <script>
-        ! function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0],
-            p = /^http:/.test(d.location) ? 'http' : 'https';
-          if (!d.getElementById(id)) {
-            js = d.createElement(s);
-            js.id = id;
-            js.src = p + '://platform.twitter.com/widgets.js';
-            fjs.parentNode.insertBefore(js, fjs);
-          }
-        }(document, 'script', 'twitter-wjs');
-      </script>
-
-      <a href="https://github.com/Angeldude" target="_blank">
-        <img src="img/GitHub-Mark.png" alt="github logo" />
-      </a>
-      <p>&copy; Copyright 2015</p>
+  <header class='headers'>
+    <h1 class='name'>Angel Vanegas</h1>
+    <div class='flex-container'>
+      <section class='col'>
+        <a href='mailto:angelman@gmail.com'>angelman@gmail.com</a>
+      </section>
+      <section class='col'>
+        <a href='http://icebrekkers.co/'>IceBrekkers Final Project</a>
+      </section>
+      <section class='col'>
+        <a href='https://secure-beach-9013.herokuapp.com/'>AirGrub Trio Project</a>
+      </section>
     </div>
+  </header>
+
+  <nav class='flex'>
+    <div class="col">
+      <a href="#content">
+        <span class="about">About Me!</span>
+      </a>
+    </div>
+    <div class='col'>
+      <a href='#projects'>
+        <span class="project">Projects</span>
+      </a>
+    </div>
+    <div class='col links'>
+      <a href='https://github.com/Angeldude'>
+        <img class='social' id='github' src='img/GitHub-Mark.png' alt='github' />
+      </a>
+      <a href='https://www.linkedin.com/pub/angel-vanegas/58/110/985'>
+        <img class='social' id='linkedin' src='img/LinkedIn.png' alt='linkedin' />
+      </a>
+    </div>
+  </nav>
+  <div class='container'>
+    <article id='content'>
+      <p class='bio'>Hi and welcome! My name is Angel Vanegas and I am a Jr Full-Stack Developer with skills in Ruby, Ruby on Rails, HTML, CSS, Javascript, and the list continues to grow! I am passionate about programming and continue to practice and hone my skills
+        every day by working on side projects and learning about new technologies.</p>
+      <img id='angel' alt='angel vanegas' src='img/angel.jpg' />
+    </article>
+
+
+    <article id="projects">
+      <section class='code'>
+        <a href='https://github.com/Angeldude/ice_brekkers'>
+          <img class='sites' src='img/icebrekkers.png' alt='icebrekkers' />
+        </a>
+
+        <p>The Icebrekkers app was made to help shy people break the ice at social events by providing conversation starters based on the event and person you're targeting.
+        Final project for Wyncode.</p>
+      </section>
+
+      <section class='code'>
+        <a href='https://github.com/Angeldude/first-rails-app'>
+          <img class='sites' src='img/airgrub.png' alt='airgrub' />
+        </a>
+
+        <p>AirGrub was a group project designed to develop and deploy a web app in only 2 days.</p>
+      </section>
+
+      <section class='code'>
+        <a href='https://github.com/Angeldude/voting_simulator'>
+          <img class='sites' src='img/voter_sim.png' alt='voter sim' />
+        </a>
+
+        <p>The voter simulation project was an exercise in Object Oriented Programming.
+        The challenge was figuring out how to get objects to communicate with each other.</p>
+      </section>
+
+      <section class='code'>
+        <a href='https://github.com/Angeldude/text-adventure'>
+          <img class='sites' src='img/text-adventure.png' alt='repl game' />
+        </a>
+
+        <p>A command line based text-adventure! Simple game that takes your on a journey through the mind!</p>
+      </section>
+
+
+
+    </article>
   </div>
+  <footer class='ending'>
+    <div id='footing'>
+      <p>Copyright &copy; 2015</p>
+      <p>Angel Vanegas</p>
+      <p>
+        <a href='mailto:angelman@gmail.com'>
+          <span id='new_color'>Email me!</span>
+        </a>
+      </p>
+    </div>
+
+  </footer>
 
 </body>
 
