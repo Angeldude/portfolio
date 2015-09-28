@@ -2,13 +2,13 @@ var main = function(){
 $('#projects').hide();
 //
 $('.about').on('click', function(){
-  $('#content').show(this);
+  $('#content').show();
   $('#projects').hide();
 
 });
 
 $('.project').on('click', function(){
-  $('#projects').show(this);
+  $('#projects').show();
   $('#content').hide();
 });
 
