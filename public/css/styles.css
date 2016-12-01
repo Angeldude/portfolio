@@ -581,10 +581,9 @@ html {
       flex: 1; }
 
 nav {
-  border: 1px dotted blue;
   background-color: #9A81EC;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center; }
   nav .about {
     color: whitesmoke; }
@@ -612,7 +611,6 @@ nav {
 #content {
   height: 32em;
   background-color: #eee3d3;
-  border: 2px solid orange;
   display: flex;
   align-items: center; }
   #content .bio {
@@ -620,8 +618,7 @@ nav {
     flex: 3; }
 
 .ending {
-  background-color: #9A81EC;
-  border: 1px dotted blue; }
+  background-color: #9A81EC; }
   .ending #footing {
     display: flex;
     justify-content: space-around;
@@ -632,7 +629,6 @@ nav {
 #projects {
   display: flex;
   background-color: #eee3d3;
-  border: 2px solid orange;
   justify-content: space-around;
   flex-direction: column; }
   #projects .code {
